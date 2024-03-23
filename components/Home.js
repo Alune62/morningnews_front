@@ -21,7 +21,13 @@ function Home() {
       });
   }, []);
 
-  const filteredArticles = articlesData.filter((data) => !hiddenArticles.includes(data.title));
+  const filteredArticles = articlesData.filter(data => {
+    if (hiddenArticles) {
+      return !hiddenArticles.includes(data.title);
+    }
+    return true; // Si hiddenArticles est undefined, ne pas appliquer de filtre
+  });
+  
   const articles = filteredArticles.map((data, i) => {
     const isBookmarked = bookmarks.some(bookmark => bookmark.title === data.title);
     return <Article key={i} {...data} isBookmarked={isBookmarked} />;

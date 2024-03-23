@@ -44,6 +44,7 @@ function Article(props) {
       <div className={styles.divider}></div>
       <Image src={props.urlToImage} alt={props.title} width={600} height={314} />
       <p>{props.description}</p>
+      <a href={props.url} style={{color: 'blue'}}>Lien vers l'article</a>
     </div>
   );
 }
