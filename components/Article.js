@@ -43,8 +43,7 @@ function Article(props) {
       <h4 style={{ textAlign: "right" }}>- {props.author}</h4>
       <div className={styles.divider}></div>
       <Image src={props.urlToImage} alt={props.title} width={600} height={314} />
-      <p>{props.description}</p>
-      <a href={props.url} style={{color: 'blue'}}>Lien vers l'article</a>
+      <a href={props.url} style={{color: 'blue'}}>{props.description}</a>
     </div>
   );
 }
